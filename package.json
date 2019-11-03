@@ -1,7 +1,9 @@
 {
 	"name": "vscdoe-cloud-sync",
-	"displayName": "vscdoe-cloud-sync",
-	"description": "",
+	"displayName": "Cloud Sync",
+	"description": "同步Vscode配置信息到自定义的服务器，需要配合指定后端使用",
+	"keywords": ["setting","sync","cloud","vscode","tool"],
+	"publisher": "jeferwang@qq.com",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.39.0"
@@ -11,7 +13,7 @@
 	],
 	"activationEvents": [
 		"onCommand:extension.helloWorld",
-		"onCommand:extension.fuck"
+		"onCommand:extension.demo"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -21,13 +23,13 @@
 				"title": "Hello World"
 			},
 			{
-				"command": "extension.fuck",
-				"title": "Fuck"
+				"command": "extension.demo",
+				"title": "Demo"
 			}
 		],
 		"keybindings":[
 			{
-				"command": "extension.helloWorld",
+				"command": "extension.demo",
 				"key": "ctrl+f10",
 				"mac": "cmd+f10",
 				"when": "editorTextFocus"
@@ -37,11 +39,23 @@
 			"editor/context": [
 				{
 					"when": "editorTextFocus",
-					"command": "extension.helloWorld",
+					"command": "extension.demo",
 					"group": "navigation"
 				}
 			]
-		}
+		},
+		"configuration":[
+			{
+				"title": "Server Config",
+				"properties": {
+					"vscodeCloudSync.serverAddr":{
+						"type":"string",
+						"default":"",
+						"description": "云同步服务端地址"
+					}
+				}
+			}
+		]
 	},
 	"scripts": {
 		"vscode:prepublish": "yarn run compile",

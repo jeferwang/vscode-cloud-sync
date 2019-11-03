@@ -9,12 +9,12 @@ export function activate(context: vscode.ExtensionContext) {
 		vscode.window.showInformationMessage('Hello World!');
 	});
 
-	const commandFuck=vscode.commands.registerCommand('extension.fuck',()=>{
-		vscode.window.showWarningMessage("Fuck");
+	const commandDemo=vscode.commands.registerCommand('extension.demo',()=>{
+		vscode.window.showWarningMessage("Demo");
 	})
 
 	context.subscriptions.push(commandHelloWorld);
-	context.subscriptions.push(commandFuck);
+	context.subscriptions.push(commandDemo);
 }
 
 // this method is called when your extension is deactivated
