@@ -2,7 +2,13 @@
 	"name": "vscdoe-cloud-sync",
 	"displayName": "Cloud Sync",
 	"description": "同步Vscode配置信息到自定义的服务器，需要配合指定后端使用",
-	"keywords": ["setting","sync","cloud","vscode","tool"],
+	"keywords": [
+		"setting",
+		"sync",
+		"cloud",
+		"vscode",
+		"tool"
+	],
 	"publisher": "jeferwang@qq.com",
 	"version": "0.0.1",
 	"engines": {
@@ -27,7 +33,7 @@
 				"title": "Demo"
 			}
 		],
-		"keybindings":[
+		"keybindings": [
 			{
 				"command": "extension.demo",
 				"key": "ctrl+f10",
@@ -44,13 +50,13 @@
 				}
 			]
 		},
-		"configuration":[
+		"configuration": [
 			{
 				"title": "Server Config",
 				"properties": {
-					"vscodeCloudSync.serverAddr":{
-						"type":"string",
-						"default":"",
+					"vscodeCloudSync.serverAddr": {
+						"type": "string",
+						"default": "",
 						"description": "云同步服务端地址"
 					}
 				}
@@ -74,5 +80,9 @@
 		"typescript": "^3.3.1",
 		"tslint": "^5.12.1",
 		"vscode-test": "^1.2.0"
+	},
+	"dependencies": {
+		"@octokit/rest": "^16.34.1",
+		"https-proxy-agent": "^3.0.1"
 	}
 }
