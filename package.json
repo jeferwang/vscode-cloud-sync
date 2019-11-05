@@ -18,9 +18,9 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.helloWorld",
-		"onCommand:extension.demo"
+		"*"
 	],
+	"extensionKind": "ui",
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
