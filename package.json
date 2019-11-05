@@ -25,43 +25,13 @@
 	"contributes": {
 		"commands": [
 			{
-				"command": "extension.helloWorld",
-				"title": "Hello World"
-			},
-			{
-				"command": "extension.demo",
-				"title": "Demo"
+				"command": "extension.uploadSetting",
+				"title": "Upload Setting"
 			}
 		],
-		"keybindings": [
-			{
-				"command": "extension.demo",
-				"key": "ctrl+f10",
-				"mac": "cmd+f10",
-				"when": "editorTextFocus"
-			}
-		],
-		"menus": {
-			"editor/context": [
-				{
-					"when": "editorTextFocus",
-					"command": "extension.demo",
-					"group": "navigation"
-				}
-			]
-		},
-		"configuration": [
-			{
-				"title": "Server Config",
-				"properties": {
-					"vscodeCloudSync.serverAddr": {
-						"type": "string",
-						"default": "",
-						"description": "云同步服务端地址"
-					}
-				}
-			}
-		]
+		"keybindings": [],
+		"menus": {},
+		"configuration": []
 	},
 	"scripts": {
 		"vscode:prepublish": "yarn run compile",
@@ -78,7 +48,7 @@
 		"glob": "^7.1.4",
 		"mocha": "^6.1.4",
 		"typescript": "^3.3.1",
-		"tslint": "^5.12.1",
+		"tslint": "^5.20.0",
 		"vscode-test": "^1.2.0"
 	},
 	"dependencies": {

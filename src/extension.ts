@@ -1,21 +1,18 @@
 import * as vscode from 'vscode';
+import { PluginManager } from './services/plugin'
 
 
 export function activate(context: vscode.ExtensionContext) {
+	console.log("vscode-cloud-sync已激活");
 
-	console.log('Congratulations, your extension "vscdoe-cloud-sync" is now active!');
+	const pluginManager = new PluginManager();
 
-	const commandHelloWorld = vscode.commands.registerCommand('extension.helloWorld', () => {
-		vscode.window.showInformationMessage('Hello World!');
-	});
+	const commandUploadSetting = vscode.commands.registerCommand(
+		'extension.uploadSetting',
+		pluginManager.getExtensionList.bind(pluginManager)
+	);
 
-	const commandDemo = vscode.commands.registerCommand('extension.demo', () => {
-		vscode.window.showWarningMessage("Demo");
-	});
-
-	context.subscriptions.push(commandHelloWorld);
-	context.subscriptions.push(commandDemo);
+	context.subscriptions.push(commandUploadSetting);
 }
 
-// this method is called when your extension is deactivated
 export function deactivate() { }
